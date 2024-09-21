@@ -8,10 +8,10 @@ class MyFilter(Filter):
         for i in self.urls:
             if i in message.text:
                 return True
-        if message.entities:
-            for entities in message.entities:
-                if entities.type in ['text_link', 'url']:
-                    return True
-        else:
-            return False
+            if message.entities:
+                for entities in message.entities:
+                    if entities.type in ['text_link', 'url']:
+                        return True
+            else:
+                return False
 
